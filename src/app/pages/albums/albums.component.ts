@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MasterService } from '../../services/master.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-albums',
@@ -12,6 +13,8 @@ import { CommonModule } from '@angular/common';
 export class AlbumsComponent implements OnInit {
   albums: any[] = [];
   masterService = inject(MasterService);
+  router = inject(Router); // Inject Router here
+
   ngOnInit() {
     this.masterService.getAllAlbums().subscribe({
       next: (data: any) => {
@@ -22,5 +25,8 @@ export class AlbumsComponent implements OnInit {
         alert('Something went wrong');
       },
     });
+  }
+  onView(id: string) {
+    this.router.navigate(['album', id]);
   }
 }

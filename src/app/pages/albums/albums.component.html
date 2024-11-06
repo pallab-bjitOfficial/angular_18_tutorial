@@ -5,6 +5,7 @@
         <th>Id</th>
         <th>Title</th>
         <th>User Id</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -12,6 +13,7 @@
         <td>{{ album.id }}</td>
         <td>{{ album.title }}</td>
         <td>{{ album.userId }}</td>
+        <td><button (click)="onView(album.id)">View</button></td>
       </tr>
     </tbody>
   </table>
