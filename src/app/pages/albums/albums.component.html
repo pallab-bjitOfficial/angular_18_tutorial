@@ -1,0 +1,17 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>User Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let album of albums">
+        <td>{{ album.id }}</td>
+        <td>{{ album.title }}</td>
+        <td>{{ album.userId }}</td>
+      </tr>
+    </tbody>
+  </table>

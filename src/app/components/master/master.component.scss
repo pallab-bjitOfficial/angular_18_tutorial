@@ -1,0 +1,11 @@
+.active {
+  background-color: blue;
+  color: white;
+}
+
+.master-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}

@@ -1,0 +1,66 @@
+<p>employee-form works!</p>
+
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="firstName">First Name:</label>
+    <input id="firstName" formControlName="firstName" />
+    <div *ngIf="f['firstName'].errors && (f['firstName'].dirty || f['firstName'].touched)">
+      <small *ngIf="f['firstName'].errors?.['required']">First Name is required.</small>
+      <small *ngIf="f['firstName'].errors?.['minlength']">First Name must be at least 3 characters long.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" formControlName="lastName" />
+    <div *ngIf="f['lastName'].errors && (f['lastName'].dirty || f['lastName'].touched)">
+      <small *ngIf="f['lastName'].errors?.['required']">Last Name is required.</small>
+      <small *ngIf="f['lastName'].errors?.['minlength']">Last Name must be at least 3 characters long.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" />
+    <div *ngIf="f['email'].errors && (f['email'].dirty || f['email'].touched)">
+      <small *ngIf="f['email'].errors?.['required']">Email is required.</small>
+      <small *ngIf="f['email'].errors?.['email']">Invalid email format.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="phone">Phone:</label>
+    <input id="phone" formControlName="phone" />
+    <div *ngIf="f['phone'].errors && (f['phone'].dirty || f['phone'].touched)">
+      <small *ngIf="f['phone'].errors?.['required']">Phone number is required.</small>
+      <small *ngIf="f['phone'].errors?.['pattern']">Phone number must be 10 digits.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="position">Position:</label>
+    <input id="position" formControlName="position" />
+    <div *ngIf="f['position'].errors && (f['position'].dirty || f['position'].touched)">
+      <small *ngIf="f['position'].errors?.['required']">Position is required.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="salary">Salary:</label>
+    <input id="salary" type="number" formControlName="salary" />
+    <div *ngIf="f['salary'].errors && (f['salary'].dirty || f['salary'].touched)">
+      <small *ngIf="f['salary'].errors?.['required']">Salary is required.</small>
+      <small *ngIf="f['salary'].errors?.['invalidSalary']">Salary must be at least 30,000.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="dateOfJoining">Date of Joining:</label>
+    <input id="dateOfJoining" type="date" formControlName="dateOfJoining" />
+    <div *ngIf="f['dateOfJoining'].errors && (f['dateOfJoining'].dirty || f['dateOfJoining'].touched)">
+      <small *ngIf="f['dateOfJoining'].errors?.['required']">Date of Joining is required.</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="employeeForm.invalid">Submit</button>
+</form>

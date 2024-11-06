@@ -1,0 +1,10 @@
+<div class="master-container">
+  <button (click)="setActiveComponent('roles')"
+    [ngClass]="{ active: currentActiveComponent === 'roles' }">Roles</button>
+  <button (click)="setActiveComponent('designation')"
+    [ngClass]="{ active: currentActiveComponent === 'designation' }">Designation</button>
+</div>
+<div>
+  <app-roles *ngIf="currentActiveComponent === 'roles'"></app-roles>
+  <app-designation *ngIf="currentActiveComponent === 'designation'"></app-designation>
+</div>
