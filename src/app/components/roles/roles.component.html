@@ -11,8 +11,8 @@
     <tbody>
       <tr *ngFor="let user of users">
         <td>{{ user.id }}</td>
-        <td>{{ user.name }}</td>
-        <td>{{ user.email }}</td>
+        <td>{{ user.name | kebabCase }}</td>
+        <td>{{ user.email |lowercase }}</td>
       </tr>
     </tbody>
   </table>

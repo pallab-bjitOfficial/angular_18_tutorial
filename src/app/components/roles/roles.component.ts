@@ -1,13 +1,27 @@
-import { CommonModule } from '@angular/common';
+import {
+  CommonModule,
+  DecimalPipe,
+  LowerCasePipe,
+  UpperCasePipe,
+} from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MasterService } from '../../services/master.service';
 import { EmployeeFormComponent } from '../employee-form/employee-form.component';
+import { KebabCasePipe } from '../../pipes/kebab-case.pipe';
 
 @Component({
   selector: 'app-roles',
   standalone: true,
-  imports: [FormsModule, CommonModule, EmployeeFormComponent],
+  imports: [
+    FormsModule,
+    CommonModule,
+    EmployeeFormComponent,
+    UpperCasePipe,
+    LowerCasePipe,
+    DecimalPipe,
+    KebabCasePipe,
+  ],
   templateUrl: './roles.component.html',
   styleUrl: './roles.component.scss',
 })
