@@ -2,7 +2,7 @@
   <button (click)="setActiveComponent('roles')"
     [ngClass]="{ active: currentActiveComponent === 'roles' }">Roles</button>
   <button (click)="setActiveComponent('designation')"
-    [ngClass]="{ active: currentActiveComponent === 'designation' }">Designation</button>
+    [ngClass]="{ active: currentActiveComponent === 'designation' }">Post</button>
 </div>
 <div>
   <app-roles *ngIf="currentActiveComponent === 'roles'"></app-roles>
