@@ -6,12 +6,12 @@
         <tr>
           <th>Id</th>
           <th>Title</th>
-          <th>Body</th>
+          <th>Email</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let user of users">
-          <td>{{ user.id }}</td>
+          <td> {{ user.id }}</td>
           <td>{{ user.name | kebabCase }}</td>
           <td>{{ user.email |lowercase }}</td>
         </tr>
